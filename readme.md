@@ -4,7 +4,7 @@ SHA256 implementation extracted from [Bitcoin Core](https://github.com/bitcoin/b
 
 ## Usage
 ```js
-import {ripemd160} from 'https://bitvm.github.io/sha256/sha256.js'
+import {sha256} from 'https://bitvm.github.io/sha256/sha256.js'
 
 const preimage = new Uint8Array([97, 98, 99])    // Our preimage is "abc"
 const digest = sha256(preimage)
