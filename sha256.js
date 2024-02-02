@@ -8,8 +8,8 @@ const bytesPerPage = 64 * 1024
 export function sha256(data) {
 	// Increase the size of the wasm memory if necessary
 	if(data.length > memory.buffer.byteLength){
-		const pages = Math.floor((data.length - memory.buffer.byteLength) / bytesPerPage ) + 1
-		memory.grow(pages)
+		const delta = Math.floor((data.length - memory.buffer.byteLength) / bytesPerPage ) + 1
+		memory.grow(delta)
 	}
 
 	const wasm_data = new Uint8Array(memory.buffer, 0, data.length)
